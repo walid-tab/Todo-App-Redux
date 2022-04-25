@@ -1,12 +1,11 @@
 import { ADDTODO, DELETETODO } from "./ActionType"
 
 const intialState={
-
-
-    taskList: [  { id: Math.random(), task: "task1" },
+    taskList:[
+    { id: Math.random(), task: "task1" },
     { id: Math.random(), task: "task2" },
-    { id: Math.random(), task: "task3" },]
-
+    { id: Math.random(), task: "task3" },
+            ]
 }
 
 const Reducer=(state=intialState, action)=>{
@@ -17,8 +16,7 @@ const Reducer=(state=intialState, action)=>{
         return {...state,  taskList: [...state.taskList,  action.payload  ]  }
     
         case DELETETODO:
-            return { ...state, taskList:    state.taskList.filter(el=>  el.id !== action.payload  )     }
-
+            return { ...state, taskList: state.taskList.filter(el=>  el.id !== action.payload  )     }
     
         default:
          return state
